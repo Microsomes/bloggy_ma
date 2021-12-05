@@ -37,7 +37,7 @@ if(isset($_SESSION['username'])){
        <div class="flex w-1/2 mt-6 flex-wrap  justify-around">
            
        <a href="viewAllPublishedBlogs.php"> <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
-                     View Blogs
+                     View Published Blogs
                </button></a>
             
             <?php if($isLogged){ ?>
