@@ -43,7 +43,7 @@ if(isset($_SESSION['username'])){
             <?php if($isLogged){ ?>
 
                 <a href="account.php"> <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
-                     My Account
+                     My Account (<?php echo $username; ?>)
                </button></a>
 
               

@@ -31,11 +31,11 @@ if (!isset($_SESSION['username'])) {
     <p class="mt-4 text-xl">Welcome <?php echo $_SESSION['username']; ?>!</p>
     <p class="text-xl"><?php echo $_SESSION['bio'];?></p>
 
-    <p class="text-sm underline mt-1"><a href="logout.php">Create Blog</a></p>
+    <p class="bg-white rounded-md hover:bg-gray-500 p-1 text-sm underline mt-5"><a href="createblog.php">Create Blog</a></p>
 
-    <p class="text-sm underline mt-1"><a href="logout.php">My Blogs</a></p>
+    <p class="bg-white rounded-md hover:bg-gray-500 p-1 text-sm underline mt-1"><a href="logout.php">My Blogs</a></p>
 
-    <p class="text-sm underline mt-1"><a href="logout.php">Logout</a></p>
+    <p class="bg-white rounded-md hover:bg-gray-500 p-1 text-sm underline mt-1"><a href="logout.php">Logout</a></p>
     </div>
 
     
