@@ -12,6 +12,8 @@
     //insert the tables with pdo
     $conn->exec($sql_tables);
 
+    header('Location: ./index.php');
+
 
 
 
