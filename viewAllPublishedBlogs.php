@@ -80,7 +80,57 @@ $blogs=array_slice($blogs,$currentpage,$blogs_per_page);
                             <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-category" type="text" placeholder="Search Blogs" name="search">
                         </div>
                     </div>
-                    <div class="flex items-center justify-between">
+
+                    <!--search filters-->
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-category">
+                                Search Filter Category
+                            </label>
+                            <div class="relative">
+                                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-category" name="category">
+                                    <option value="">Select Category</option>
+                                    <?php
+                                    //get all categories
+                                    $sql = "SELECT * FROM categories";
+                                    $stmt = $conn->prepare($sql);
+                                    $stmt->execute();
+                                    $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+                                    foreach($categories as $category){
+                                        echo "<option value='".$category['id']."'>".$category['label']."</option>";
+                                    }
+                                    ?>
+                                </select>
+
+                            </div>
+                            </div>
+                        </div>
+
+                        
+                        <!--select time range-->
+                        <div class="w-full ">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-category">
+                                Select Time Range
+                            </label>
+                            <div class="relative">
+                                <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-category" name="time">
+                                    <option value="">Select Time Range</option>
+                                    <option value="1">Last 24 Hours</option>
+                                    <option value="2">Last Week</option>
+                                    <option value="3">Last Month</option>
+                                    <option value="4">Last Year</option>
+                                </select>
+
+                            </div>
+                            </div>
+
+
+
+                    </div>
+
+                    <div class="flex mt-3 items-center justify-between">
                         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                             Search
                         </button>
@@ -88,6 +138,7 @@ $blogs=array_slice($blogs,$currentpage,$blogs_per_page);
                 </div>
             </form>
         </div>
+
 
 
         <div class="flex flex-wrap">
