@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
 
 </head>
-<body>
+<body class="bg-gray-400">
 
     <!--Login form-->
     <div class="container bg-gray-400 flex-col flex items-center h-screen justify-center mx-auto">

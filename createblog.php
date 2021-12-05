@@ -28,7 +28,7 @@ $totalCategories=count($categories);
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
-<body>
+<body class="bg-gray-400">
 
 <!--create blog post form-->
 <div class="container flex-col bg-gray-400 flex items-center h-screen justify-center mx-auto">
