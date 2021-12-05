@@ -21,16 +21,19 @@ error_reporting(E_ALL);
 
     
 
-    function create_user($username, $password, $email){
+    function create_user($username, $password, $aboutme){
         //create a new user in the database
         global $conn;
-        $query = $conn->prepare("INSERT INTO members (username, password, email) VALUES (:username, :password, :email)");
+        $query = $conn->prepare("INSERT INTO members (username, password, aboutme) VALUES (:username, :password, :aboutme)");
         $query->bindValue(':username', $username);
         $query->bindValue(':password', $password);
-        $query->bindValue(':email', $email);
+        $query->bindValue(':aboutme', $aboutme);
         $query->execute();
 
-
+        echo "created user";
+        
+        //user is created, redirect to login
+        header('Location: login.php');
 
     }
 
@@ -47,10 +50,12 @@ error_reporting(E_ALL);
                         //create user
                         create_user($_POST['username'], $_POST['password'], $_POST['bio']);
                         //redirect to login page
-                        header('Location: login.php');
+                        header('Location: ../login.php?username='.$_POST['username']);
                     }else{
                         //username is taken
-                        echo 'Username is taken';
+                        echo 'Username is taken, try another one';
+
+                        echo '<a href="signup.php"> Back</a>';
                     }
                 }else{
                     //bio is empty
@@ -59,11 +64,12 @@ error_reporting(E_ALL);
             }else{
                 //password is empty
                 echo 'Password is empty';
+                echo '<a href="signup.php"> Back</a>';
             }
         }else{
             //username is empty
             echo 'Username is empty';
-            header('Location: ../signup.php?error=username');
+            echo '<a href="signup.php"> Back</a>';
         }
     }else{
         //form not submitted

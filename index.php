@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+$isLogged=false;
+$username="";
+
+if(isset($_SESSION['username'])){
+    $isLogged=true;
+    $username=$_SESSION['username'];
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,16 +34,27 @@
            Read the latest news and updates from the world of technology, programming and web development.
        </p>
 
-       <div class="flex w-1/2 mt-6   justify-around">
+       <div class="flex w-1/2 mt-6 flex-wrap  justify-around">
            
-       <a href="login.php"> <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
+       <a href="blogs.php"> <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
                      View Blogs
                </button></a>
             
-          
-               <a href="login.php"> <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
-                     Login/Signup
+            <?php if($isLogged){ ?>
+
+                <a href="account.php"> <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
+                     My Account
                </button></a>
+
+               <a href="logout.php"> <button class="mt-6 btn hover:bg-gray-500 bg-white rounded-md p-1">
+                     Logout (<?php echo $username; ?>)
+               </button></a>
+            <?php }else{ ?>
+                <a href="login.php"> <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
+                        Login/Signup
+                </button></a>
+            <?php } ?>
+
          
 
 

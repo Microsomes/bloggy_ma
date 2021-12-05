@@ -14,7 +14,7 @@
 <body>
 
     <!--Login form-->
-    <div class="container flex-col flex items-center h-screen justify-center mx-auto">
+    <div class="container bg-gray-400 flex-col flex items-center h-screen justify-center mx-auto">
 
         <h1>
             <a href="index.php" class="text-2xl text-center text-gray-800 font-bold">
