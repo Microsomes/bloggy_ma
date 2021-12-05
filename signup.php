@@ -25,7 +25,7 @@
 
         <div class="mt-6 flex justify-center">
             <div class="w-full max-w-sm">
-                <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="process/login.php" method="post">
+                <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="process/signup.php" method="post">
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                             Username

@@ -22,14 +22,14 @@
 
        <div class="flex w-1/2 mt-6   justify-around">
            
-               <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
-                     <a href="login.php">View Blogs</a>
-               </button>
+       <a href="login.php"> <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
+                     View Blogs
+               </button></a>
             
           
-               <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
-                     <a href="login.php">Login/Signup</a>
-               </button>
+               <a href="login.php"> <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
+                     Login/Signup
+               </button></a>
          
 
 

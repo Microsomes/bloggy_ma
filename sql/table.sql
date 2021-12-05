@@ -17,7 +17,7 @@ CREATE table IF NOT EXISTS members(
     id INTEGER AUTO_INCREMENT,
     PRIMARY KEY (id),
     username varchar(255),
-    passname varchar(255),
+    password varchar(255),
     aboutme text DEFAULT NULL,
     created DATETIME DEFAULT CURRENT_TIMESTAMP
 );
