@@ -46,9 +46,7 @@ if(isset($_SESSION['username'])){
                      My Account
                </button></a>
 
-               <a href="logout.php"> <button class="mt-6 btn hover:bg-gray-500 bg-white rounded-md p-1">
-                     Logout (<?php echo $username; ?>)
-               </button></a>
+              
             <?php }else{ ?>
                 <a href="login.php"> <button class="btn hover:bg-gray-500 bg-white rounded-md p-1">
                         Login/Signup
