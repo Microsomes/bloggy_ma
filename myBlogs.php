@@ -49,9 +49,9 @@ $blogs=$stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach($blogs as $blog): ?>
                 <div class="w-full max-w-sm p-2">
                     <div class="bg-white border-2 py-6 border-gray-1 rounded shadow-md p-4">
-                        <p class="text-gray-700 text-base">
+                       <a class="underline text-2xl" href="viewBlog.php?id=<?php echo $blog['id'];?>"> <p class="text-gray-700 text-base">
                             <?php echo $blog['title']; ?>
-                        </p>
+                        </p></a>
               
                         <p class="text-gray-700 text-base">
                             <?php echo $blog['content']; ?>
@@ -61,7 +61,7 @@ $blogs=$stmt->fetchAll(PDO::FETCH_ASSOC);
                         </p>
                  
                         <a href="edit.php?id=<?php echo $blog['id']; ?>" class="bg-blue-500 hover:bg-blue-700 mt-2 text-white font-bold py-2 px-4 rounded">Edit</a>
-                        <a href="delete.php?id=<?php echo $blog['id']; ?>" class="bg-red-500 hover:bg-red-700 mt-2 text-white font-bold py-2 px-4 rounded">Delete</a>
+                        <a href="process/deleteBlog.php?id=<?php echo $blog['id']; ?>" class="bg-red-500 hover:bg-red-700 mt-2 text-white font-bold py-2 px-4 rounded">Delete</a>
 
 
                         <!--if published =1 or 0-->
