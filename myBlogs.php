@@ -33,6 +33,15 @@ $blogs=$stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body class="bg-gray-400">
 
+
+            <h1 class="w-full  text-center">
+            <a href="index.php" class="text-center text-2xl text-center text-gray-800 font-bold">
+                BLoggy
+            </a>
+        </h1>
+
+
+
     <!--list all blogs-->
     <div class="container mx-auto">
         <h1 class="text-center text-5xl font-bold">My Blogs</h1>
@@ -53,6 +62,16 @@ $blogs=$stmt->fetchAll(PDO::FETCH_ASSOC);
                  
                         <a href="edit.php?id=<?php echo $blog['id']; ?>" class="bg-blue-500 hover:bg-blue-700 mt-2 text-white font-bold py-2 px-4 rounded">Edit</a>
                         <a href="delete.php?id=<?php echo $blog['id']; ?>" class="bg-red-500 hover:bg-red-700 mt-2 text-white font-bold py-2 px-4 rounded">Delete</a>
+
+
+                        <!--if published =1 or 0-->
+                        <?php if($blog['published']==1): ?>
+                            <a href="process/unpublish.php?id=<?php echo $blog['id']; ?>" class="bg-red-500 hover:bg-red-700 mt-2 text-white font-bold py-2 px-4 rounded">Unpublish</a>
+                        <?php else: ?>
+                            <a href="process/publish.php?id=<?php echo $blog['id']; ?>" class="bg-blue-500 hover:bg-blue-700 mt-2 text-white font-bold py-2 px-4 rounded">Publish</a>
+                        <?php endif; ?>
+
+
                     </div>
                 </div>
             <?php endforeach; ?>
