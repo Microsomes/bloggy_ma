@@ -29,7 +29,8 @@ CREATE table IF NOT EXISTS blog(
     content text NOT NULL,
     created DATETIME DEFAULT CURRENT_TIMESTAMP,
     published integer DEFAULT 0,
-    categoryid integer NOT NULL
+    categoryid integer NOT NULL,
+    thumbnail varchar(255) DEFAULT NULL
 );
 
 CREATE table IF NOT EXISTS blog_claps(
