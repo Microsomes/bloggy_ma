@@ -30,6 +30,7 @@ CREATE table IF NOT EXISTS blog(
     created DATETIME DEFAULT CURRENT_TIMESTAMP,
     published integer DEFAULT 0,
     categoryid integer NOT NULL,
+    userid integer NOT NULL,
     thumbnail varchar(255) DEFAULT NULL
 );
 

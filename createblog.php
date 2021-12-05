@@ -62,6 +62,7 @@ $totalCategories=count($categories);
                             Category
                         </label>
                         <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="category" name="category">
+                            <option disabled>Select a Category</option>
                             <?php foreach($categories as $category): ?>
                                 <option value="<?php echo $category['id']; ?>"><?php echo $category['label']; ?></option>
                             <?php endforeach; ?>
@@ -74,6 +75,15 @@ $totalCategories=count($categories);
                         Create
                     </button>
                 </div>
+
+                <!--success message blog created-->
+                <?php if(isset($_GET['id'])): ?>
+                    <div class="mt-5 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">
+                        <p>Blog Created <a href="viewBlog.php?id=<?php echo $_GET['id'];?>">View</a></p>
+                    </div>
+                <?php endif; ?>
+
+
             </form>
         </div>
     </div>
