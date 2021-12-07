@@ -23,7 +23,7 @@ if (!isset($_SESSION['username'])) {
 
     <h1>
             <a href="index.php" class="text-2xl text-center text-gray-800 font-bold">
-                BLoggy
+                Car BLoggy
             </a>
         </h1>
 

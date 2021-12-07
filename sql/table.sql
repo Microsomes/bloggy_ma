@@ -19,6 +19,7 @@ CREATE table IF NOT EXISTS members(
     username varchar(255),
     password varchar(255),
     aboutme text DEFAULT NULL,
+    favoriteCarId integer DEFAULT NULL,
     created DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 

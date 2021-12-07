@@ -5,6 +5,8 @@ error_reporting(E_ALL);
     include_once('../includes/connect.php');
 
 
+  
+
     function username_taken($username){
         //check if members table if username already exists using pdo
         global $conn;
@@ -21,13 +23,14 @@ error_reporting(E_ALL);
 
     
 
-    function create_user($username, $password, $aboutme){
+    function create_user($username, $password, $aboutme, $favoriteCarId){
         //create a new user in the database
         global $conn;
-        $query = $conn->prepare("INSERT INTO members (username, password, aboutme) VALUES (:username, :password, :aboutme)");
+        $query = $conn->prepare("INSERT INTO members (username, password, aboutme,favoriteCarId) VALUES (:username, :password, :aboutme,:favoriteCarId)");
         $query->bindValue(':username', $username);
         $query->bindValue(':password', $password);
         $query->bindValue(':aboutme', $aboutme);
+        $query->bindValue(':favoriteCarId', $favoriteCarId);
         $query->execute();
 
         echo "created user";
@@ -48,7 +51,7 @@ error_reporting(E_ALL);
                     //check if username is not taken
                     if(!username_taken($_POST['username'])){
                         //create user
-                        create_user($_POST['username'], $_POST['password'], $_POST['bio']);
+                        create_user($_POST['username'], $_POST['password'], $_POST['bio'],$_POST['car']);
                         //redirect to login page
                         header('Location: ../login.php?username='.$_POST['username']);
                     }else{

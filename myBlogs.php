@@ -36,7 +36,7 @@ $blogs=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
             <h1 class="w-full  text-center">
             <a href="index.php" class="text-center text-2xl text-center text-gray-800 font-bold">
-                BLoggy
+               Car BLoggy
             </a>
         </h1>
 

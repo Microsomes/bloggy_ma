@@ -1,3 +1,20 @@
+
+<?php
+
+
+include_once("./includes/connect.php");
+
+//list all cars pdo
+$sql = "SELECT * FROM cars";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$cars = $stmt->fetchAll();
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +28,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
 
 </head>
-<body>
+<body class="bg-gray-400">
 
     <!--Login form-->
     <div class="container bg-gray-400 flex-col flex items-center h-screen justify-center mx-auto">
 
         <h1>
             <a href="index.php" class="text-2xl text-center text-gray-800 font-bold">
-                BLoggy
+                Car BLoggy
             </a>
         </h1>
 
@@ -38,6 +55,22 @@
                         </label>
                         <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" name="password">
                     </div>
+
+            <!--select a favorite car-->
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    Favorite Car Model
+                </label>
+                <select class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="car" name="car">
+                    <option disabled>
+                        Select a car
+                    </option>
+                    <?php foreach($cars as $car): ?>
+                        <option value="<?php echo $car['Car_ID']; ?>"><?php echo $car['Make']. "-".$car['Model']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
 
                     <!--about me bio-->
                     <div class="mb-6">

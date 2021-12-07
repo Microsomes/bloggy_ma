@@ -22,16 +22,16 @@ if(isset($_SESSION['username'])){
     <!--use tailwind cdn-->
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
-    <title>Bloggy</title>
+    <title>Car Bloggy</title>
 </head>
 <body>
 
     <div class="w-screen h-screen flex-col bg-gray-400 flex items-center justify-center">
 
 
-       <h1 class="text-3xl"> Welcome to the Bloggy blog</h1>
+       <h1 class="text-3xl"> Welcome to the Car Bloggy</h1>
        <p class="w-1/2 text-center mt-2">
-           Read the latest news and updates from the world of technology, programming and web development.
+           Read the latest news about cars and see what people are saying about them.
        </p>
 
        <div class="flex w-1/2 mt-6 flex-wrap  justify-around">

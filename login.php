@@ -18,7 +18,7 @@
 
         <h1>
             <a href="index.php" class="text-2xl text-gray-800 font-bold">
-                Bloggy
+                Car Bloggy
             </a>
         </h1>
 
@@ -57,7 +57,7 @@
                     </div>
                 </form>
                 <p class="text-center text-gray-500 text-xs">
-                    &copy;2021 Bloggy All rights reserved.
+                    &copy;2021 Car Bloggy All rights reserved.
     
 </body>
 </html>

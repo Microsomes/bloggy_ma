@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //defines the database that will be used
-$DB_NAME="bloggy";
+$DB_NAME="db1915345";
 
 
 /**
@@ -15,9 +15,11 @@ $DB_NAME="bloggy";
 
 // Create connection using pdo
 
-$servername = "localhost";
-$username = "mag";
-$password = "magpass";
+$isLocal=true;
+
+$servername = $isLocal  ? "localhost":"mi-linux.wlv.ac.uk:3306";
+$username =   $isLocal  ? "mag":"1915345";
+$password =   $isLocal  ? "magpass":"wlv123";
 
 
 try {

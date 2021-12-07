@@ -35,7 +35,7 @@ $totalCategories=count($categories);
 
         <h1>
             <a href="index.php" class="text-2xl text-gray-800 font-bold">
-                Bloggy
+                Car Bloggy
             </a>
         </h1>
 
